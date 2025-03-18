@@ -238,7 +238,7 @@ void Grid::updateGhosts(int it, double t){
   }
   for (int i = iRbnd; i < ntrack-1; ++i){
     Itot[i] = Itot[iRbnd-1];
-    Itot[i].x[MV] += (i-iRbnd) * Ctot[iRbnd-1].G.dx[MV];
+    Itot[i].x[MV] += (i-iRbnd+1) * Ctot[iRbnd-1].G.dx[MV];
     Itot[i].computedA();
   }
   userBoundaries(it, t); // overiding with user-specific boundary conditions
